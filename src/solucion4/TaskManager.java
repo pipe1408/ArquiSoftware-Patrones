@@ -8,12 +8,12 @@ public class TaskManager {
 
     public void addTask(Task task) {
         tasks.add(task);
-        System.out.println("Task added: " + task.getName());
+        System.out.println("ha sido agregado: " + task.getName());
     }
 
     public void removeTask(Task task) {
         tasks.remove(task);
-        System.out.println("Task removed: " + task.getName());
+        System.out.println("ha sido eliminado: " + task.getName());
     }
 }
 
