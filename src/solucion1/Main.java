@@ -4,19 +4,25 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-        HeroePrototype arqueroFelipe = new Arquero("Felipe", "Azul");
+        HeroePrototype guerreroMain = new Guerrero("Luis", "Azul");
+        HeroePrototype arqueroMain = new Arquero("Felipe", "Rojo");
+        HeroePrototype magoMain = new Mago("Santiago", "Amarillo");
 
-        jugar(arqueroFelipe);
+        jugar(guerreroMain);
+        HeroePrototype guerreroSecundario = guerreroMain.clonar();
+        guerreroSecundario.addHabilidad("Espada legendaria");
+        guerreroSecundario.removeHabilidad("Espada vieja");
+        jugar(guerreroSecundario);
 
-        HeroePrototype arqueroClon = arqueroFelipe.clonar();
-        arqueroClon.setNombre("Santiago");
-        arqueroClon.setColor("Rojo");
-        arqueroClon.addHabilidad("Flecha magica");
-        arqueroClon.removeHabilidad("Vendaje");
+        jugar(arqueroMain);
+        HeroePrototype arqueroSecundario = arqueroMain.clonar();
+        arqueroSecundario.setNombre("Daniel");
+        jugar(arqueroSecundario);
 
-        printInfo(arqueroClon);
-
-        jugar(arqueroClon);
+        jugar(magoMain);
+        HeroePrototype magoSecundario = magoMain.clonar();
+        magoSecundario.setColor("Morado");
+        jugar(magoSecundario);
     }
 
     private static void jugar(HeroePrototype heroe) {

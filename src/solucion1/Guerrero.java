@@ -1,29 +1,29 @@
 package solucion1;
 
-public class Arquero extends HeroePrototype {
+public class Guerrero extends HeroePrototype {
 
-    public Arquero(String nombre, String color) {
+    public Guerrero(String nombre, String color) {
         super(nombre, color);
         habilidadesClase();
     }
 
     @Override
     public String getClase() {
-        return "Arquero";
+        return "Guerrero";
     }
 
     @Override
     public HeroePrototype clonar() {
-        return new Arquero(this);
+        return new Guerrero(this);
     }
 
-    public Arquero(Arquero heroe) {
+    public Guerrero(Guerrero heroe) {
         super(heroe);
     }
 
     private void habilidadesClase() {
-        this.addHabilidad("Flecha normal");
+        this.addHabilidad("Espada vieja");
+        this.addHabilidad("Escudo roto");
         this.addHabilidad("Vendaje");
-        this.addHabilidad("Binoculares");
     }
 }
