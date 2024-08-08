@@ -1,7 +1,7 @@
 # ArquiSoftware-Patrones
 
 ### Problema 1
-Patrón escogido:
+Patrón escogido: Prototype
 
 ### Problema 2
 Patrón escogido:
@@ -14,3 +14,8 @@ Patrón escogido:
 
 ### Problema 5
 Patrón escogido:
+
+## Integrantes
+- Valentina Rodríguez
+- Santiago Carrillo
+- Felipe Ballesteros
