@@ -1,5 +1,5 @@
 package solucion4;
-public class main {
+public class Main {
     public static void main(String[] args) {
         TaskManager taskManager = new TaskManager();
         CommandExecutor executor = new CommandExecutor();
