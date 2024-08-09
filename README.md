@@ -25,6 +25,23 @@ funcionamiento de este  patrón.
 
 ## Problema 4
 ### Patrón:
+Siguiendo la solución propuesta por el patrón Command, se creó una interfaz Command que define los métodos execute() y
+undo(). Estos métodos representan las acciones que se pueden realizar sobre las tareas en el sistema de gestión de 
+tareas, como crear, eliminar, o modificar tareas.
+Heredando de la interfaz Command, se implementaron las clases concretas CreateTaskCommand y DeleteTaskCommand. Cada una 
+de estas clases encapsula una acción específica que se puede realizar sobre una tarea.
+
+Adicionalmente, se creó una clase auxiliar llamada TaskManager que se encarga de gestionar las tareas del sistema. Esta
+clase incluye métodos para agregar, eliminar y obtener tareas, dejando la responsabilidad de la gestión de las tareas 
+en un solo lugar.
+
+Para coordinar la ejecución de los comandos, se implementó la clase CommandExecutor. Esta clase es responsable de 
+ejecutar los comandos y mantener un registro de ellos para permitir deshacer la última acción realizada. Esto 
+proporciona una manera ordenada de ejecutar y revertir acciones dentro del sistema.
+
+Por último, en la clase Main se implementaron los métodos run() y printTaskInfo() para simular la ejecución del sistema.
+Estos métodos permiten crear y eliminar tareas, así como deshacer las acciones realizadas, mostrando cómo el patrón 
+Command organiza y simplifica la ejecución y reversión de acciones en un sistema de gestión de tareas.
 
 ## Problema 5
 ### Patrón:
