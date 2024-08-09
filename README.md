@@ -43,6 +43,7 @@ Por último, en la clase Main se implementaron los métodos run() y printTaskInf
 Estos métodos permiten crear y eliminar tareas, así como deshacer las acciones realizadas, mostrando cómo el patrón 
 Command organiza y simplifica la ejecución y reversión de acciones en un sistema de gestión de tareas.
 
+![GestionTareas.png](src/solucion4/GestionTareas.png)
 ## Problema 5
 ### Patrón:
 
