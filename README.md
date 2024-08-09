@@ -24,7 +24,7 @@ funcionamiento de este  patrón.
 ### Patrón:
 
 ## Problema 4
-### Patrón:
+### Patrón: Command
 Siguiendo la solución propuesta por el patrón Command, se creó una interfaz Command que define los métodos execute() y
 undo(). Estos métodos representan las acciones que se pueden realizar sobre las tareas en el sistema de gestión de 
 tareas, como crear, eliminar, o modificar tareas.
@@ -39,14 +39,22 @@ Para coordinar la ejecución de los comandos, se implementó la clase CommandExe
 ejecutar los comandos y mantener un registro de ellos para permitir deshacer la última acción realizada. Esto 
 proporciona una manera ordenada de ejecutar y revertir acciones dentro del sistema.
 
-Por último, en la clase Main se implementaron los métodos run() y printTaskInfo() para simular la ejecución del sistema.
-Estos métodos permiten crear y eliminar tareas, así como deshacer las acciones realizadas, mostrando cómo el patrón 
-Command organiza y simplifica la ejecución y reversión de acciones en un sistema de gestión de tareas.
+Por último, en la clase Main se crea un nuevo TaskManager y un nuevo CommandExecutor para despues poner a crear una 
+nueva tarea. Después llamar el crear un nuevo comando, y retroceder el ultimo comando
 
 ![GestionTareas.png](src/solucion4/GestionTareas.png)
 ## Problema 5
-### Patrón:
+### Patrón: Decorator
+En esta solución, se creó una clase abstracta Habitacion que define las propiedades que toda habitación del hotel 
+debería tener independientemente de las personalizaciones hechas por el cliente. Entre estos se incluye la descripción y
+el costo base de la habitación, así como la capacidad de personalizar la decoración debido a mejoras adicionales.
 
+Adicionalmente, se creó una clase auxiliar CostoAdicionalCalculator que tiene la responsabilidad del cálculo del costo 
+total dependiendo de las mejoras adicionales que se aplican a la habitación.
+
+Por último, en la clase Hotel se agrega una nueva habitacion basica, y se le agregan distintos complementos para 
+comprobar el funcionamiento del codigo
+![Hotel.png](src/solucion5/Hotel.png)
 ## Integrantes
 - Valentina Rodríguez
 - Santiago Carrillo
