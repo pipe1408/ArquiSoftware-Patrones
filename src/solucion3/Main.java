@@ -14,15 +14,18 @@ public class Main {
 
             switch (opcion) {
                 case 1:
-                    manejarPedido(new PedidoComida());
+                    manejarPedido(new PedidoComida(), new String[]{"Pizza", "Ensalada", "Hamburguesa"},
+                            new double[]{12.99, 5.49, 8.99});
                     break;
 
                 case 2:
-                    manejarPedido(new PedidoBebida());
+                    manejarPedido(new PedidoBebida(), new String[]{"Cerveza", "Refresco", "Agua"},
+                            new double[]{3.99, 1.49, 0.99});
                     break;
 
                 case 3:
-                    manejarPedido(new PedidoPostre());
+                    manejarPedido(new PedidoPostre(), new String[]{"Tarta de manzana", "Helado", "Brownie"},
+                            new double[]{4.99, 3.49, 2.99});
                     break;
 
                 case 0:
@@ -35,18 +38,22 @@ public class Main {
         } while (opcion != 0);
     }
 
-    private static void manejarPedido(Pedido pedido) {
-        String item;
-        double precio;
-        int cantidad;
-
-        while (true) {
-            item = JOptionPane.showInputDialog(null, "Ingrese el nombre del ítem (o 'fin' para terminar):");
-            if (item.equalsIgnoreCase("fin")) break;
-
-            precio = Double.parseDouble(JOptionPane.showInputDialog(null, "Ingrese el precio del ítem:"));
-            pedido.agregarItem(item, precio);
+    private static void manejarPedido(Pedido pedido, String[] items, double[] precios) {
+        String menuProductos = "Seleccione un producto:\n";
+        for (int i = 0; i < items.length; i++) {
+            menuProductos += (i + 1) + ". " + items[i] + " - $" + precios[i] + "\n";
         }
+        menuProductos += "0. Finalizar pedido";
+
+        int opcionProducto;
+        do {
+            opcionProducto = Integer.parseInt(JOptionPane.showInputDialog(null, menuProductos));
+            if (opcionProducto > 0 && opcionProducto <= items.length) {
+                String itemSeleccionado = items[opcionProducto - 1];
+                double precioSeleccionado = precios[opcionProducto - 1];
+                pedido.agregarItem(itemSeleccionado, precioSeleccionado);
+            }
+        } while (opcionProducto != 0);
 
         pedido.procesarPedido();
     }
