@@ -14,18 +14,18 @@ public class Main {
 
             switch (opcion) {
                 case 1:
-                    manejarPedido(new PedidoComida(), new String[]{"Pizza", "Ensalada", "Hamburguesa"},
-                            new double[]{12.99, 5.49, 8.99});
+                    manejarPedido(new PedidoComida(), new String[]{"Tacos", "Burrito", "Nachos","Flautas","Esquites"},
+                            new int[]{26500, 28700, 17700, 12500, 11300});
                     break;
 
                 case 2:
-                    manejarPedido(new PedidoBebida(), new String[]{"Cerveza", "Refresco", "Agua"},
-                            new double[]{3.99, 1.49, 0.99});
+                    manejarPedido(new PedidoBebida(), new String[]{"Cerveza", "Gaseosa", "Agua","Jugo","Limonada"},
+                            new int[]{3700, 3500, 2000, 4000, 3200});
                     break;
 
                 case 3:
-                    manejarPedido(new PedidoPostre(), new String[]{"Tarta de manzana", "Helado", "Brownie"},
-                            new double[]{4.99, 3.49, 2.99});
+                    manejarPedido(new PedidoPostre(), new String[]{"Pie de manzana", "Helado", "Brownie","Churros","Tres leches"},
+                            new int[]{9700, 7800, 8900, 10200,12400});
                     break;
 
                 case 0:
@@ -38,7 +38,7 @@ public class Main {
         } while (opcion != 0);
     }
 
-    private static void manejarPedido(Pedido pedido, String[] items, double[] precios) {
+    private static void manejarPedido(Pedido pedido, String[] items, int[] precios) {
         String menuProductos = "Seleccione un producto:\n";
         for (int i = 0; i < items.length; i++) {
             menuProductos += (i + 1) + ". " + items[i] + " - $" + precios[i] + "\n";
@@ -52,6 +52,8 @@ public class Main {
                 String itemSeleccionado = items[opcionProducto - 1];
                 double precioSeleccionado = precios[opcionProducto - 1];
                 pedido.agregarItem(itemSeleccionado, precioSeleccionado);
+            } else if (opcionProducto != 0) {
+                JOptionPane.showMessageDialog(null, "Opción no disponible. Inténtelo de nuevo.");
             }
         } while (opcionProducto != 0);
 
