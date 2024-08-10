@@ -12,12 +12,12 @@ public class Usuario {
         this.dispositivos = new ArrayList<>();
     }
 
-    public void addDispositivo(Dispositivo dispositivo) {
+    public void iniciarSesion(Dispositivo dispositivo) {
         this.dispositivos.add(dispositivo);
         System.out.println("[" + this.nombre + "] Nuevo inicio de sesión en: " + dispositivo.getClass().getSimpleName());
     }
 
-    public void removeDispositivo(Dispositivo dispositivo) {
+    public void cerrarSesion(Dispositivo dispositivo) {
         System.out.println("[" + this.nombre + "] Sesión cerrada en: " + dispositivo.getClass().getSimpleName());
         this.dispositivos.remove(dispositivo);
     }

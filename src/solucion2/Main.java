@@ -8,13 +8,13 @@ public class Main {
         Dispositivo android = new Android();
         Dispositivo desktop = new Desktop();
 
-        felipe.addDispositivo(iphone);
-        felipe.addDispositivo(android);
-        felipe.addDispositivo(desktop);
+        felipe.iniciarSesion(iphone);
+        felipe.iniciarSesion(android);
+        felipe.iniciarSesion(desktop);
 
         valentina.nuevoMensaje(felipe, "Hola");
 
-        felipe.removeDispositivo(iphone);
+        felipe.cerrarSesion(iphone);
 
         valentina.nuevoMensaje(felipe, "Adiós");
 
