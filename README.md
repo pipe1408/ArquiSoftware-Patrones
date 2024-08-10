@@ -38,7 +38,15 @@ generando la notificación en cada dispositivo.
 ![Diagrama](src/solucion2/solucion2.drawio.png)
 
 ## Problema 3
-### Patrón:
+### Patrón: Template Method
+En el sistema de gestión de restaurantes, utilizamos el Patrón de Diseño Template Method para manejar el proceso común de los pedidos de comida, bebidas y postres. Creamos una clase abstracta base llamada Pedido que define los pasos generales que todos los pedidos deben seguir, como tomar el pedido, verificar la disponibilidad, preparar el pedido, calcular el precio y completar el pedido. Esta clase base incluye un método procesarPedido() que asegura que todos los tipos de pedidos sigan la misma estructura, mientras que permite a las subclases definir cómo se realizan tareas específicas como la preparación y la verificación de la disponibilidad.
+
+Luego, creamos subclases específicas como PedidoComida, PedidoBebida y PedidoPostre, que extienden la clase Pedido y proporcionan implementaciones personalizadas para la preparación y verificación de cada tipo de pedido. Por ejemplo, PedidoComida sabe cómo preparar la comida, mientras que PedidoBebida maneja la preparación de las bebidas. De esta manera, logramos que cada tipo de pedido tenga su propio comportamiento específico, pero sin duplicar el código común.
+
+Finalmente, el sistema permite a los usuarios hacer múltiples pedidos a través de una interfaz simple. Los pedidos se almacenan en una lista gestionada por la clase PedidoTotal, que luego calcula el precio total de todos los pedidos realizados. Este enfoque nos permite mantener el código organizado y fácil de expandir, ya que podemos añadir nuevos tipos de pedidos simplemente creando nuevas subclases que sigan la estructura definida en la clase base.
+
+![Diagrama3.drawio.png](src/solucion3/Diagrama3.drawio.png)
+
 
 ## Problema 4
 ### Patrón: Command
