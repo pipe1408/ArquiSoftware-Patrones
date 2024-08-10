@@ -18,7 +18,24 @@ funcionamiento de este  patrón.
 ![Diagrama](src/solucion1/diagrama.drawio.png)
 
 ## Problema 2
-### Patrón:
+### Patrón: Observer
+
+Utilizando el patrón Observer, se implementó una solución con una clase Usuario que sirve como la clase Publisher del
+patrón, en ella está contendia una lista de dispositivos (Subscribers) con objetos de tipo Dispositivo. El usuario puede
+agregar un dispositivo en su lista iniciando sesión en él con el método iniciarSesión() especificando un objeto
+Dispositivo y a su vez eliminarlo cerrando sesión con cerrarSesion(). El usuario también tiene la posibilidad de enviar
+un mensaje a otro usuario con el método nuevoMensaje(), que como parámetros recibe el destinatario (Usuario) y el
+mensaje (String).
+
+En cuanto a los dispositivos, la interfaz Dispositivo contiene el método actualizar(), implementado por las subclases
+hijas para generar una notificación en el dispositivo. Como subclases de Dispositivo, se crearon las clases IPhone,
+Android y Desktop, cada una con una forma distinta de notificar al usuario.
+
+Al momento de recibir un mensaje, se acciona el método notificarUsuario() del destinatario, el cuál recorre su lista de
+dispositivos llamando el método actualizar() en cada uno de los dispositivos, enviándole el mensaje y su remitente,
+generando la notificación en cada dispositivo.
+
+![Diagrama](src/solucion2/solucion2.drawio.png)
 
 ## Problema 3
 ### Patrón:
