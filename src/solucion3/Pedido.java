@@ -7,12 +7,12 @@ import java.util.UUID;
 abstract class Pedido {
     protected String idPedido;
     protected List<String> items;
-    protected double precioTotal;
+    protected int precioTotal;
 
     public Pedido() {
         this.idPedido = UUID.randomUUID().toString();
         this.items = new ArrayList<>();
-        this.precioTotal = 0.0;
+        this.precioTotal = 0;
     }
 
     public void agregarItem(String item, double precio) {
@@ -42,5 +42,9 @@ abstract class Pedido {
 
     protected void completarPedido() {
         System.out.println("Pedido " + idPedido + " completado.");
+    }
+
+    public int getPrecioTotal() {
+        return precioTotal;
     }
 }
