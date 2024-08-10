@@ -4,32 +4,45 @@ import javax.swing.*;
 
 public class Main {
     public static void main(String[] args) {
+        PedidoTotal pedidoTotal = new PedidoTotal();
         int opcion;
+
         do {
             opcion = Integer.parseInt(JOptionPane.showInputDialog(null, "====MENU====\n" +
                     "1. Ordenar comida\n" +
                     "2. Ordenar bebida\n" +
                     "3. Ordenar postre\n" +
+                    "4. Finalizar compra\n" +
                     "0. SALIR\n"));
 
             switch (opcion) {
                 case 1:
-                    manejarPedido(new PedidoComida(), new String[]{"Tacos", "Burrito", "Nachos","Flautas","Esquites"},
+                    Pedido pedidoComida = new PedidoComida();
+                    manejarPedido(pedidoComida, new String[]{"Tacos", "Burrito", "Nachos", "Flautas", "Esquites"},
                             new int[]{26500, 28700, 17700, 12500, 11300});
+                    pedidoTotal.agregarPedido(pedidoComida);
                     break;
 
                 case 2:
-                    manejarPedido(new PedidoBebida(), new String[]{"Cerveza", "Gaseosa", "Agua","Jugo","Limonada"},
+                    Pedido pedidoBebida = new PedidoBebida();
+                    manejarPedido(pedidoBebida, new String[]{"Cerveza", "Gaseosa", "Agua", "Jugo", "Limonada"},
                             new int[]{3700, 3500, 2000, 4000, 3200});
+                    pedidoTotal.agregarPedido(pedidoBebida);
                     break;
 
                 case 3:
-                    manejarPedido(new PedidoPostre(), new String[]{"Pie de manzana", "Helado", "Brownie","Churros","Tres leches"},
-                            new int[]{9700, 7800, 8900, 10200,12400});
+                    Pedido pedidoPostre = new PedidoPostre();
+                    manejarPedido(pedidoPostre, new String[]{"Pie de manzana", "Helado", "Brownie", "Churros", "Tres leches"},
+                            new int[]{9700, 7800, 8900, 10200, 12400});
+                    pedidoTotal.agregarPedido(pedidoPostre);
+                    break;
+
+                case 4:
+                    pedidoTotal.calcularPrecioFinal();
                     break;
 
                 case 0:
-                    JOptionPane.showMessageDialog(null, "Chao pescao...");
+                    JOptionPane.showMessageDialog(null, "Good bye...");
                     break;
 
                 default:
@@ -58,5 +71,7 @@ public class Main {
         } while (opcionProducto != 0);
 
         pedido.procesarPedido();
+        
+
     }
 }
