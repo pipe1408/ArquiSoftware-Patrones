@@ -80,7 +80,7 @@ total dependiendo de las mejoras adicionales que se aplican a la habitación.
 Por último, en la clase Hotel se agrega una nueva habitacion basica, y se le agregan distintos complementos para 
 comprobar el funcionamiento del codigo
 
-![Hotel.png](src/solucion5/Hotel.png)
+![Hotel.png](src/solucion5/solucion5.drawio.png)
 ## Integrantes
 - Valentina Rodríguez
 - Santiago Carrillo
